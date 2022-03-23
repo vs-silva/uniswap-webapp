@@ -2,11 +2,10 @@ import ErrorManager from '../../../errorManager';
 
 export default (engine) => {
 
-    if(!engine)
-    {
+    if(!engine) {
        ErrorManager.processError({
-           error: 'GraphQL client must be provided',
-           reporter: 'Data client service'
+           error: 'GraphQL engine must be provided',
+           reporter: 'Data engine service'
        });
     }
 
@@ -26,7 +25,7 @@ export default (engine) => {
         catch (err) {
             ErrorManager.processError({
                 error: err,
-                reporter: 'Get function - Data client service'
+                reporter: 'Get function - GraphQL service'
             });
         }
 
