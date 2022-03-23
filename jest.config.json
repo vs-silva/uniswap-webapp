@@ -1,0 +1,10 @@
+{
+  "verbose": true,
+  "collectCoverage": true,
+  "moduleFileExtensions": ["js", "json", "mjs", "vue"],
+  "transform": {
+    "^.+\\.js$": "babel-jest",
+    "^.+\\.mjs$": "babel-jest",
+    "^.+\\.vue$": "@vue/vue3-jest"
+  }
+}
