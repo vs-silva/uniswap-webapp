@@ -7,7 +7,7 @@ import Services from './services';
 
 const _engine = new ApolloClient({
     link: createHttpLink({
-        uri: Config.api.graphql,
+        uri: Config.api.graphql.endpoint,
         fetch: fetch
     }),
     cache: new InMemoryCache()

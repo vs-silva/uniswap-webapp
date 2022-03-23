@@ -12,15 +12,15 @@ export default (client) => {
         });
     }
 
-    async function getTokens({orderBy, orderDirection, amount, skipAmount}) {
+    const { defaultRequestParams } = Config.api.graphql;
 
-        const { defaultRequestParams } = Config.api.graphql;
+    async function getTokens({orderBy = defaultRequestParams.orderBy, orderDirection = defaultRequestParams.orderDirection, amount = defaultRequestParams.first, skipAmount = defaultRequestParams.skip}) {
 
         const tokens = await client.get(TokensQuery({
-            orderBy: orderBy || defaultRequestParams.orderBy,
-            orderDirection: orderDirection || defaultRequestParams.orderDirection,
-            amount: amount || defaultRequestParams.first,
-            skipAmount: skipAmount || defaultRequestParams.skip,
+            orderBy: orderBy,
+            orderDirection: orderDirection ,
+            amount: amount,
+            skipAmount: skipAmount,
         }));
 
         return TokensService.convertDTOToEntity(tokens);
