@@ -1,4 +1,4 @@
-function processError(error, reporter = null) {
+function processError({error, reporter = null}) {
     if(error) {
         return;
     }
