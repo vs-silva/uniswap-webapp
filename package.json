@@ -6,9 +6,10 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "start": "vite"
+    "start": "node express_server"
   },
   "dependencies": {
+    "express": "^4.17.3",
     "vue": "^3.2.25"
   },
   "devDependencies": {
