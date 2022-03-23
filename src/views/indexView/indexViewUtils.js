@@ -17,7 +17,6 @@ async function getTokens() {
     try {
         const tokens = await tokensStore.getTokens({});
         uiData.tokens = tokens;
-
     }
     catch (err) {
         ErrorManager.processError({
