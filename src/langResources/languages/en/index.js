@@ -1,5 +1,7 @@
+import Table from './table';
 import Pagination from './pagination';
 
 export default {
-    Pagination
+    table: Table,
+    pagination: Pagination
 };

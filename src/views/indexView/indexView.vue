@@ -1,16 +1,21 @@
 <template>
   <h1>Index view</h1>
+  <TableComponent :tokensData="tokens"/>
 </template>
 
 <script setup>
 import IndexViewUtils from './indexViewUtils';
-import {onBeforeMount} from "vue";
+import {onBeforeMount, ref} from 'vue';
+
+//Components
+import TableComponent from '../../components/tableComponent/tableComponent.vue';
+
+const tokens = ref(null);
 
 onBeforeMount(() => {
-  console.log('ready to work');
+  IndexViewUtils.getTokens().then(res => {
+    tokens.value = res;
+  });
 });
-
-
-console.log(IndexViewUtils);
 
 </script>
