@@ -1,4 +1,8 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from 'vue';
+import LangResources from './langResources';
 
-createApp(App).mount('#app')
+import App from './App.vue';
+
+createApp(App)
+    .use(LangResources)
+    .mount('#app');
