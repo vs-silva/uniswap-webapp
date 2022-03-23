@@ -1,4 +1,4 @@
-import {Config} from '../core';
+import Config from '../config';
 import {createI18n} from 'vue-i18n/index';
 import Languages from './languages';
 
