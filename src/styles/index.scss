@@ -1,0 +1,12 @@
+// Bulma Import
+@import './node_modules/bulma/sass/base/all.sass';
+@import './node_modules/bulma/sass/utilities/all.sass';
+@import './node_modules/bulma/sass/components/all.sass';
+@import './node_modules/bulma/sass/elements/all.sass';
+@import './node_modules/bulma/sass/form/all.sass';
+@import './node_modules/bulma/sass/grid/all.sass';
+@import './node_modules/bulma/sass/helpers/all.sass';
+@import './node_modules/bulma/sass/layout/all.sass';
+
+//Custom Utilities Import
+@import './src/styles/utilities/all';
