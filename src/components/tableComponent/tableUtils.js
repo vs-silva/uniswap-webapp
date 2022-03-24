@@ -1,7 +1,6 @@
 import TableLabels from './tableLabels';
 
 function generateTableData(tokensData) {
-
     const result = {
         header: {},
         items: []

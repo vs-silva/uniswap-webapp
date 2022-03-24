@@ -1,5 +1,6 @@
 <template>
   <h1>Index view</h1>
+  <ChartComponent :tokensData="tokens"/>
   <TableComponent :tokensData="tokens"/>
 </template>
 
@@ -9,6 +10,7 @@ import {onBeforeMount, ref} from 'vue';
 
 //Components
 import TableComponent from '../../components/tableComponent/tableComponent.vue';
+import ChartComponent from '../../components/chartComponent/chartComponent.vue';
 
 const tokens = ref(null);
 
