@@ -1,5 +1,5 @@
 <template>
-  <table v-if="TableUtils.displayTable(tableData)">
+  <table v-if="tableUtils.displayTable(props)">
     <thead>
       <tr class="table-header-row">
         <th class="table-column-name">{{$t(tableData.header.name)}}</th>
@@ -21,7 +21,7 @@
 
 <script setup>
 import TableUtils from './tableUtils';
-import {ref, watchEffect} from 'vue';
+import {onMounted, ref, watchEffect} from 'vue';
 
 const props = defineProps({
   tokensData: {
@@ -31,11 +31,15 @@ const props = defineProps({
   }
 });
 
-const tableData = ref(TableUtils.generateTableData());
+const tableData = ref(null);
+const tableUtils = TableUtils(props);
+
+onMounted(() => {
+  tableData.value = tableUtils.generateTableData();
+});
 
 watchEffect(() => {
-  const { tokensData } = JSON.parse(JSON.stringify(props));
-  tableData.value = TableUtils.generateTableData(tokensData);
+  tableData.value = tableUtils.updateTable(props);
 });
 
 </script>

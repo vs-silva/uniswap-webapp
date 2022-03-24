@@ -1,14 +1,19 @@
 <template>
-  <div v-if="ChartUtils.displayChart(chartData)">
+  <div>
+
     <div>
       <button
-          v-for="(chartType, index) in ChartManager.chartType"
+          v-for="(type, index) in ChartManager.chartType"
           :key="index"
-          @click="generateChart(chartType)">
-        {{ $t(`chart.type.${chartType}`) }}
+          @click="chartUtils.generateChart(type)">
+        {{ $t(`chart.type.${type}`) }}
       </button>
     </div>
-    <canvas ref="chartContainer" />
+
+    <div>
+      <canvas ref="chartContainer" />
+    </div>
+
   </div>
 </template>
 
@@ -26,36 +31,13 @@ const props = defineProps({
 });
 
 const chartContainer = ref('');
-const chartData = ref(null);
-let tokensChart;
+const chartUtils = ChartUtils(props, chartContainer);
 
 onMounted(() => {
-  generateChart(ChartManager.chartType.line);
+  chartUtils.generateChart(ChartManager.chartType.line);
 });
 
 watchEffect(() => {
-  updateChart();
+  chartUtils.updateChart(props);
 });
-
-function generateChart(charType) {
-
-  if(tokensChart) {
-    tokensChart.destroy();
-  }
-
-  tokensChart = ChartManager.createChart(chartContainer.value, {
-    type: charType
-  });
-
-  updateChart();
-}
-
-function updateChart() {
-  chartData.value = ChartUtils.processPropsTokensData(props);
-
-  if(tokensChart) {
-    ChartManager.updateChart(tokensChart, chartData.value);
-  }
-}
-
 </script>

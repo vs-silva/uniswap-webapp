@@ -3,20 +3,37 @@ import ErrorManager from '../../errorManager';
 
 const tokensStore = Store.tokensStore;
 
-async function getTokens() {
+export default () => {
 
-    try {
-        return await tokensStore.getTokens({});
+    async function getTokens() {
+
+        try {
+            return await tokensStore.getTokens({});
+        }
+        catch (err) {
+            ErrorManager.processError({
+                error: err,
+                reporter: 'Get tokens - Index View Utils'
+            });
+        }
     }
-    catch (err) {
-        ErrorManager.processError({
-            error: err,
-            reporter: 'Get tokens - Index View Utils'
-        });
+
+    function updateRequestOrderBy(orderBy) {
+        console.log(orderBy)
     }
-}
 
+    function updateRequestOrderDirection(direction) {
+        console.log(direction);
+    }
 
-export default {
-    getTokens,
+    function updateRequestAmount(amount) {
+        console.log(amount);
+    }
+
+    return{
+        getTokens,
+        updateRequestOrderBy,
+        updateRequestOrderDirection,
+        updateRequestAmount
+    };
 };
