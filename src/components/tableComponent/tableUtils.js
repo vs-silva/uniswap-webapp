@@ -1,20 +1,54 @@
 import TableLabels from './tableLabels';
+import ErrorManager from '../../errorManager';
 
-function generateTableData(tokensData) {
-    const result = {
-        header: {},
-        items: []
-    };
+export default (props) => {
 
-    if(!tokensData) {
+    if(!props) {
+        ErrorManager.processError({
+            error: 'Required params must be provided',
+            reporter: 'Table Utils'
+        });
+    }
+
+    function generateTableData(tokensData) {
+        const result = {
+            header: {},
+            items: []
+        };
+
+        if(!tokensData) {
+            return result;
+        }
+
+        result.header = TableLabels.headers;
+        result.items = tokensData;
+
         return result;
     }
 
-    result.header = TableLabels.headers;
-    result.items = tokensData;
+    function updateTable(props) {
+        return generateTableData(extractTokensData(props));
+    }
 
-    return result;
-}
+    function displayTable(props) {
+        const tokensData = extractTokensData(props);
+        return (tokensData && Array.isArray(tokensData) && tokensData.length > 0);
+    }
+
+    function extractTokensData(props) {
+        const { tokensData } = JSON.parse(JSON.stringify(props));
+        return tokensData;
+    }
+
+    return {
+        generateTableData,
+        updateTable,
+        displayTable
+    };
+};
+
+/*
+
 
 function displayTable(tableData) {
     const { items } = JSON.parse(JSON.stringify(tableData));
@@ -24,4 +58,4 @@ function displayTable(tableData) {
 export default {
     generateTableData,
     displayTable
-};
+}; */
