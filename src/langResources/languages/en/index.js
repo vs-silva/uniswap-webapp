@@ -1,5 +1,9 @@
-import Pagination from './pagination';
+import TableLabels from './tableLabels';
+import ChartLabels from './chartLabels';
+import PaginationLabels from './paginationLabels';
 
 export default {
-    Pagination
+    table: TableLabels,
+    pagination: PaginationLabels,
+    chart: ChartLabels
 };

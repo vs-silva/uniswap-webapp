@@ -5,7 +5,7 @@ export default {
             defaultRequestParams: {
                 orderBy: 'totalValueLockedUSD',
                 orderDirection: 'desc',
-                first: 1,
+                first: 5,
                 skip: 0
             }
         },

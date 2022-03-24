@@ -1,23 +1,12 @@
 import { Store } from '../../dataCenter';
 import ErrorManager from '../../errorManager';
-import {reactive} from 'vue';
 
 const tokensStore = Store.tokensStore;
-
-const uiData = reactive({
-    tokens: null,
-    filtersData: null,
-    tableData: null,
-    chartData: null
-});
-
 
 async function getTokens() {
 
     try {
-        const tokens = await tokensStore.getTokens({});
-        uiData.tokens = tokens;
-
+        return await tokensStore.getTokens({});
     }
     catch (err) {
         ErrorManager.processError({
@@ -29,6 +18,5 @@ async function getTokens() {
 
 
 export default {
-    uiData,
     getTokens,
 };
