@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p> blablabla </p>
+    <p>{{ $t(AmountFilterLabels.filterLabel) }}</p>
     <input type="number"
            v-model="amount"
            @change="amountFilterUtils.updateAmountRequest(amount)"
@@ -10,6 +10,7 @@
 </template>
 
 <script setup>
+import AmountFilterLabels from './amountFilterLabels';
 import AmountFilterUtils from './amountFilterUtils';
 import {onMounted, ref, watchEffect} from "vue";
 

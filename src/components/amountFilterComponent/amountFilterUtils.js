@@ -8,7 +8,7 @@ export default (emit) => {
     if(!emit) {
         ErrorManager.processError({
             error: 'Required params must be provided',
-            reporter: 'Skip Filter Utils'
+            reporter: 'Amount Filter Utils'
         });
     }
 
