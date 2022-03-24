@@ -12,10 +12,6 @@ export default (emit) => {
         });
     }
 
-    function updateAmountRequest(amount) {
-        emit('update:tokens-amount', validateRequestedAmount(amount));
-    }
-
     function validateRequestedAmount(amount) {
 
         if(amount > maxRequestAmount) {
@@ -27,6 +23,10 @@ export default (emit) => {
         }
 
         return amount;
+    }
+
+    function updateAmountRequest(amount) {
+        emit('update:tokens-amount', amount);
     }
 
     return {
