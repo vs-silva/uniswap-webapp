@@ -1,3 +1,9 @@
+
+const _tokensRequestAmount = {
+    min: 1,
+    max: 100
+};
+
 export default {
     api: {
         graphql : {
@@ -5,8 +11,12 @@ export default {
             defaultRequestParams: {
                 orderBy: 'totalValueLockedUSD',
                 orderDirection: 'desc',
-                first: 5,
+                first: _tokensRequestAmount.min,
                 skip: 0
+            },
+            filters: {
+                minRequestAmount: _tokensRequestAmount.min,
+                maxRequestAmount: _tokensRequestAmount.max,
             }
         },
         rest: {
