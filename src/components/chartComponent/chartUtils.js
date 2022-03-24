@@ -49,6 +49,5 @@ function displayChart(chartData) {
 
 export default {
     processPropsTokensData,
-    generateChartData,
     displayChart
 }
