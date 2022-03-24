@@ -47,15 +47,3 @@ export default (props) => {
     };
 };
 
-/*
-
-
-function displayTable(tableData) {
-    const { items } = JSON.parse(JSON.stringify(tableData));
-    return (items.length > 0);
-}
-
-export default {
-    generateTableData,
-    displayTable
-}; */

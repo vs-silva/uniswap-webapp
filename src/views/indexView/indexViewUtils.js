@@ -18,17 +18,22 @@ export default () => {
         }
     }
 
+    function updateRequestOrderBy(orderBy) {
+        console.log(orderBy)
+    }
+
+    function updateRequestOrderDirection(direction) {
+        console.log(direction);
+    }
+
     function updateRequestAmount(amount) {
         console.log(amount);
     }
 
-    function updateRequestOrderDirection(direction){
-        console.log(direction);
-    }
-
     return{
         getTokens,
-        updateRequestAmount,
-        updateRequestOrderDirection
+        updateRequestOrderBy,
+        updateRequestOrderDirection,
+        updateRequestAmount
     };
 };
