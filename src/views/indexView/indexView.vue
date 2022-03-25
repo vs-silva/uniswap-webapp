@@ -1,16 +1,17 @@
 <template>
-  <h1>Index view</h1>
   <div>
-    <SearchComponent @update:tokens-search="indexUtils.updateRequestSearch"/>
-    <OrderByFilterComponent :tokensData="tokens" @update:token-sortBy="indexUtils.updateRequestOrderBy"/>
-    <OrderFilterComponent @update:toggle-sort-order="indexUtils.updateRequestOrderDirection"/>
-    <AmountFilterComponent @update:tokens-amount="indexUtils.updateRequestAmount"/>
+    <div>
+      <SearchComponent @update:tokens-search="indexUtils.updateRequestSearch"/>
+      <OrderByFilterComponent :tokensData="tokens" @update:token-sortBy="indexUtils.updateRequestOrderBy"/>
+      <OrderFilterComponent @update:toggle-sort-order="indexUtils.updateRequestOrderDirection"/>
+      <AmountFilterComponent @update:tokens-amount="indexUtils.updateRequestAmount"/>
+      <PaginationComponent :currentPage="pagination.currentPage" @update:token-pagination="indexUtils.updateRequestSkipAmount"/>
+    </div>
+    <ChartComponent :tokensData="tokens"/>
+    <PaginationComponent :currentPage="pagination.currentPage" @update:token-pagination="indexUtils.updateRequestSkipAmount"/>
+    <TableComponent :tokensData="tokens"/>
     <PaginationComponent :currentPage="pagination.currentPage" @update:token-pagination="indexUtils.updateRequestSkipAmount"/>
   </div>
-  <ChartComponent :tokensData="tokens"/>
-  <PaginationComponent :currentPage="pagination.currentPage" @update:token-pagination="indexUtils.updateRequestSkipAmount"/>
-  <TableComponent :tokensData="tokens"/>
-  <PaginationComponent :currentPage="pagination.currentPage" @update:token-pagination="indexUtils.updateRequestSkipAmount"/>
 </template>
 
 <script setup>
