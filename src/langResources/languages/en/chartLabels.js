@@ -1,6 +1,7 @@
 export default {
+    title: 'Tokens chart',
     tokensUniswap: 'Total Value Locked ( USD)',
-    graphType: 'Graph type',
+    graphType: 'Chart type',
     type:{
         line: 'Line',
         bar: 'Bar',

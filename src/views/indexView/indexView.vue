@@ -1,7 +1,11 @@
 <template>
   <div>
-    <div>
 
+    <div class="mb-5">
+      <p class="content is-normal m-0 is-unselectable has-text-left has-text-weight-semibold">{{$t(IndexViewLabels.searchTitle)}}</p>
+    </div>
+
+    <div class="mb-6">
       <div class="box mb-5">
         <div class="columns">
           <SearchComponent @update:tokens-search="indexUtils.updateRequestSearch" class="column is-half"/>
@@ -17,25 +21,47 @@
 
     </div>
 
-    <div class="mb-5">
-      <ChartComponent :tokensData="tokens"/>
-    </div>
+    <hr/>
 
     <div class="mb-5">
-      <PaginationComponent :currentPage="pagination.currentPage" @update:token-pagination="indexUtils.updateRequestSkipAmount"/>
-    </div>
-
-    <div class="mb-5">
-      <TableComponent :tokensData="tokens"/>
+      <p class="content is-normal m-0 is-unselectable has-text-left has-text-weight-semibold">{{$t(IndexViewLabels.chartTitle)}}</p>
     </div>
 
     <div class="mb-6">
-      <PaginationComponent :currentPage="pagination.currentPage" @update:token-pagination="indexUtils.updateRequestSkipAmount"/>
+
+      <div class="mb-5">
+        <ChartComponent :tokensData="tokens"/>
+      </div>
+
+      <div class="mb-5">
+        <PaginationComponent :currentPage="pagination.currentPage" @update:token-pagination="indexUtils.updateRequestSkipAmount"/>
+      </div>
+
     </div>
+
+    <hr/>
+
+    <div class="mb-5">
+      <p class="content is-normal m-0 is-unselectable has-text-left has-text-weight-semibold">{{$t(IndexViewLabels.tableTitle)}}</p>
+    </div>
+
+    <div class="mb-6">
+
+      <div class="mb-5">
+        <TableComponent :tokensData="tokens"/>
+      </div>
+
+      <div class="mb-5">
+        <PaginationComponent :currentPage="pagination.currentPage" @update:token-pagination="indexUtils.updateRequestSkipAmount"/>
+      </div>
+
+    </div>
+
   </div>
 </template>
 
 <script setup>
+import IndexViewLabels from './indexViewLabels';
 import IndexViewUtils from './indexViewUtils';
 import {onBeforeMount} from 'vue';
 
