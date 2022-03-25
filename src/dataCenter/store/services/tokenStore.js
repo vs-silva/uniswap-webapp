@@ -14,9 +14,10 @@ export default (client) => {
 
     const { defaultRequestParams } = Config.api.graphql;
 
-    async function getTokens({orderBy = defaultRequestParams.orderBy, orderDirection = defaultRequestParams.orderDirection, amount = defaultRequestParams.first, skipAmount = defaultRequestParams.skip}) {
+    async function getTokens({name = defaultRequestParams.name, orderBy = defaultRequestParams.orderBy, orderDirection = defaultRequestParams.orderDirection, amount = defaultRequestParams.first, skipAmount = defaultRequestParams.skip}) {
 
         const tokens = await client.get(TokensQuery({
+            name: name,
             orderBy: orderBy,
             orderDirection: orderDirection ,
             amount: amount,

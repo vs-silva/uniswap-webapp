@@ -9,6 +9,7 @@ export default {
         graphql : {
             endpoint: 'https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v3',
             defaultRequestParams: {
+                name: '',
                 orderBy: 'totalValueLockedUSD',
                 orderDirection: 'desc',
                 first: _tokensRequestAmount.min,
