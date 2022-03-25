@@ -1,5 +1,5 @@
 export default {
-    tokenSortOrderPlaceholder: 'Switch order',
+    tokenSortOrderPlaceholder: 'Direction',
     tokenSortOrderDescending: 'Descending',
     tokenSortOrderAscending: 'Ascending'
 };
