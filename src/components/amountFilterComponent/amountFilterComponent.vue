@@ -1,11 +1,13 @@
 <template>
   <div>
-    <p>{{ $t(AmountFilterLabels.filterLabel) }}</p>
-    <input type="number"
-           v-model="amount"
-           @change="emitChange"
-           :min="amountFilterUtils.minRequestAmount"
-           :max="amountFilterUtils.maxRequestAmount" />
+    <p class="content is-small m-0">{{ $t(AmountFilterLabels.filterLabel) }}</p>
+    <input
+        type="number"
+        v-model="amount"
+        @change="emitChange"
+        :min="amountFilterUtils.minRequestAmount"
+        :max="amountFilterUtils.maxRequestAmount"
+        class="input is-small"/>
   </div>
 </template>
 

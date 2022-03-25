@@ -1,13 +1,19 @@
 <template>
+
   <div>
-    <p>{{$t(OrderLabels.label)}}</p>
-    <select v-model="selectedOption" @change="orderByUtils.emitChange(selectedOption)">
-      <option disabled value="">{{$t(OrderLabels.select.placeholder)}}</option>
-      <option v-for="(item, index) in orderByData.options" :key="index" :value="item.value" :class="`select-option-${item.value}`">
-        {{item.description}}
-      </option>
-    </select>
+    <p class="content is-small m-0">{{$t(OrderLabels.label)}}</p>
+
+    <div class="select is-small is-fullwidth">
+      <select v-model="selectedOption" @change="orderByUtils.emitChange(selectedOption)">
+        <option disabled value="">{{$t(OrderLabels.select.placeholder)}}</option>
+        <option v-for="(item, index) in orderByData.options" :key="index" :value="item.value" :class="`select-option-${item.value}`">
+          {{item.description}}
+        </option>
+      </select>
+    </div>
+
   </div>
+
 </template>
 
 <script setup>

@@ -1,13 +1,13 @@
 <template>
   <div>
 
-    <div>
-      <button
-          v-for="(type, index) in ChartManager.chartType"
-          :key="index"
-          @click="chartUtils.generateChart(type)">
-        {{ $t(`chart.type.${type}`) }}
-      </button>
+    <div class="columns">
+      <div v-for="(type, index) in ChartManager.chartType"
+           :key="index" class="column">
+        <button @click="chartUtils.generateChart(type)" class="button is-small is-fullwidth">
+          {{ $t(`chart.type.${type}`) }}
+        </button>
+      </div>
     </div>
 
     <div>

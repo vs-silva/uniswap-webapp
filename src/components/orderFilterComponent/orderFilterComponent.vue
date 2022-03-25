@@ -1,11 +1,17 @@
 <template>
+
   <div>
-    <p>{{$t(OrderFilterLabels.filterLabel)}}</p>
-    <button
-      v-if="toggleLabel"
-      @click="orderFilterUtils.toggleSortDirection(isInDescOrder)"
-    >{{$t(toggleLabel)}}</button>
+    <p class="content is-small m-0">{{$t(OrderFilterLabels.filterLabel)}}</p>
+
+    <div>
+      <button v-if="toggleLabel"
+          @click="orderFilterUtils.toggleSortDirection(isInDescOrder)"
+          class="button is-small is-fullwidth"
+      >{{$t(toggleLabel)}}</button>
+    </div>
+
   </div>
+
 </template>
 
 <script setup>

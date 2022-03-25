@@ -1,3 +1,4 @@
 export default {
-    label: 'search.tokensPlaceholder'
+    label: 'search.tokensSearchLabel',
+    placeholder: 'search.tokensSearchPlaceholder'
 }

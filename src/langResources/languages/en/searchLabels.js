@@ -1,3 +1,4 @@
 export default {
-    tokensPlaceholder: 'Search'
+    tokensSearchLabel: 'Search',
+    tokensSearchPlaceholder: 'Search for...'
 };
