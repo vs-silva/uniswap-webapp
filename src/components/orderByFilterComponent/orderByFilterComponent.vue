@@ -1,7 +1,7 @@
 <template>
 
   <div>
-    <p class="content is-small m-0">{{$t(OrderLabels.label)}}</p>
+    <p class="content is-small m-0 is-unselectable has-text-left has-text-weight-semibold">{{$t(OrderLabels.label)}}</p>
 
     <div class="select is-small is-fullwidth">
       <select v-model="selectedOption" @change="orderByUtils.emitChange(selectedOption)">

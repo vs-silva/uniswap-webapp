@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p class="content is-small m-0">{{ $t(AmountFilterLabels.filterLabel) }}</p>
+    <p class="content is-small m-0 is-unselectable has-text-left has-text-weight-semibold">{{ $t(AmountFilterLabels.filterLabel) }}</p>
     <input
         type="number"
         v-model="amount"

@@ -1,7 +1,7 @@
 <template>
 
   <div>
-    <p class="content is-small m-0">{{$t(SearchLabels.label)}}</p>
+    <p class="content is-small m-0 is-unselectable has-text-left has-text-weight-semibold">{{$t(SearchLabels.label)}}</p>
 
     <div class="control has-icons-left">
       <input

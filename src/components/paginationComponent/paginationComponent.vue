@@ -12,7 +12,7 @@
       </div>
 
       <div class="column is-one-fifth">
-        <p class="content is-small m-0 pt-2 is-fullwidth">{{ currentPage }}</p>
+        <p class="content is-small m-0 pt-2 is-fullwidth is-unselectable">{{ currentPage }}</p>
       </div>
 
       <div class="column">

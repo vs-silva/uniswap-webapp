@@ -1,7 +1,7 @@
 <template>
 
   <div>
-    <p class="content is-small m-0">{{$t(OrderFilterLabels.filterLabel)}}</p>
+    <p class="content is-small m-0 is-unselectable has-text-left has-text-weight-semibold">{{$t(OrderFilterLabels.filterLabel)}}</p>
 
     <div>
       <button v-if="toggleLabel"
