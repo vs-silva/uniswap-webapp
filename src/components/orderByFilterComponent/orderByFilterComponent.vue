@@ -19,7 +19,7 @@
 <script setup>
 import OrderLabels from './orderByFilterLabels';
 import OrderByFilterUtils from './orderByFilterUtils';
-import {watchEffect} from 'vue';
+import {onUpdated, watchEffect} from 'vue';
 
 const props = defineProps({
   tokensData: {
@@ -37,9 +37,12 @@ const orderByUtils = OrderByFilterUtils(props, emit);
 const orderByData = orderByUtils.orderByData;
 const selectedOption = orderByUtils.selectedOption;
 
-watchEffect(() => {
+const unwatch = watchEffect(() => {
   orderByData.value = orderByUtils.generateOrderByData(props);
-  selectedOption.value = orderByData.value.options?.[0]?.value || '';
+});
+
+onUpdated(() => {
+  orderByUtils.setOptionInitialValue(unwatch);
 });
 
 </script>

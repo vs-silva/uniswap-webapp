@@ -72,9 +72,18 @@ export default (props, emit) => {
         emit('update:token-sortBy', selectedOption);
     }
 
+    function setOptionInitialValue(unwatch) {
+        if(!selectedOption.value) {
+            selectedOption.value = orderByData.value.options?.[0]?.value || '';
+            unwatch();
+            return;
+        }
+    }
+
     return {
         orderByData,
         selectedOption,
+        setOptionInitialValue,
         generateOrderByData,
         emitChange
     };
