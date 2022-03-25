@@ -10,6 +10,10 @@
     "unit:tests": "jest unit_tests --detectOpenHandles --forceExit"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-regular-svg-icons": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/vue-fontawesome": "^3.0.0-5",
     "apollo-cache-inmemory": "^1.6.6",
     "apollo-client": "^2.6.10",
     "apollo-link-http": "^1.5.17",

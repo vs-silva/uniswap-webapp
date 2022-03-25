@@ -1,3 +1,3 @@
 export default {
-    tokensPlaceholder: 'Choose or enter amount'
+    tokensPlaceholder: 'Qty.'
 };

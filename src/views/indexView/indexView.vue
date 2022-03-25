@@ -1,16 +1,37 @@
 <template>
   <div>
     <div>
-      <SearchComponent @update:tokens-search="indexUtils.updateRequestSearch"/>
-      <OrderByFilterComponent :tokensData="tokens" @update:token-sortBy="indexUtils.updateRequestOrderBy"/>
-      <OrderFilterComponent @update:toggle-sort-order="indexUtils.updateRequestOrderDirection"/>
-      <AmountFilterComponent @update:tokens-amount="indexUtils.updateRequestAmount"/>
+
+      <div class="box mb-5">
+        <div class="columns">
+          <SearchComponent @update:tokens-search="indexUtils.updateRequestSearch" class="column is-half"/>
+          <OrderByFilterComponent :tokensData="tokens" @update:token-sortBy="indexUtils.updateRequestOrderBy" class="column is-one-quarter"/>
+          <OrderFilterComponent @update:toggle-sort-order="indexUtils.updateRequestOrderDirection" class="column"/>
+          <AmountFilterComponent @update:tokens-amount="indexUtils.updateRequestAmount" class="column"/>
+        </div>
+      </div>
+
+      <div class="mb-5">
+        <PaginationComponent :currentPage="pagination.currentPage" @update:token-pagination="indexUtils.updateRequestSkipAmount"/>
+      </div>
+
+    </div>
+
+    <div class="mb-5">
+      <ChartComponent :tokensData="tokens"/>
+    </div>
+
+    <div class="mb-5">
       <PaginationComponent :currentPage="pagination.currentPage" @update:token-pagination="indexUtils.updateRequestSkipAmount"/>
     </div>
-    <ChartComponent :tokensData="tokens"/>
-    <PaginationComponent :currentPage="pagination.currentPage" @update:token-pagination="indexUtils.updateRequestSkipAmount"/>
-    <TableComponent :tokensData="tokens"/>
-    <PaginationComponent :currentPage="pagination.currentPage" @update:token-pagination="indexUtils.updateRequestSkipAmount"/>
+
+    <div class="mb-5">
+      <TableComponent :tokensData="tokens"/>
+    </div>
+
+    <div class="mb-6">
+      <PaginationComponent :currentPage="pagination.currentPage" @update:token-pagination="indexUtils.updateRequestSkipAmount"/>
+    </div>
   </div>
 </template>
 

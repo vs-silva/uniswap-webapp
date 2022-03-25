@@ -1,5 +1,6 @@
 export default {
     tokensUniswap: 'Total Value Locked ( USD)',
+    graphType: 'Graph type',
     type:{
         line: 'Line',
         bar: 'Bar',
