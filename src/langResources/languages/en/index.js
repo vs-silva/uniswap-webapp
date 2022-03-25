@@ -1,3 +1,4 @@
+import HeaderLabels from './headerLabels';
 import TableLabels from './tableLabels';
 import ChartLabels from './chartLabels';
 import SearchLabels from './searchLabels';
@@ -7,6 +8,7 @@ import FilterOrderLabels from './filterOrderLabels';
 import FilterOrderByLabels from './filterOrderByLabels';
 
 export default {
+    header: HeaderLabels,
     table: TableLabels,
     pagination: PaginationLabels,
     chart: ChartLabels,
