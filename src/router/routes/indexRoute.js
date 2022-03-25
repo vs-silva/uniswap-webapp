@@ -1,5 +1,5 @@
 export default {
-    name: 'index',
+    name: 'search',
     path: '/',
     component: () => import('../../views/indexView/indexView.vue')
 };
