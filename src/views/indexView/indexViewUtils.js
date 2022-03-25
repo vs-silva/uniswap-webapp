@@ -10,6 +10,7 @@ export default () => {
     const defaultRequest = Config.api.graphql.defaultRequestParams;
 
     const request = reactive({
+        name: defaultRequest.name,
         orderBy: defaultRequest.orderBy,
         orderDirection:defaultRequest.orderDirection,
         amount: defaultRequest.first,
@@ -26,6 +27,7 @@ export default () => {
     function getTokens() {
 
         tokensStore.getTokens({
+            name: request.name,
             orderBy: request.orderBy,
             orderDirection: request.orderDirection,
             amount: request.amount,
@@ -40,6 +42,13 @@ export default () => {
             });
         });
 
+    }
+
+    function updateRequestSearch(search) {
+        request.name = search;
+        request.skip = 0;
+        pagination.direction = 'reset';
+        getTokens();
     }
 
     function updateRequestOrderBy(orderBy) {
@@ -102,6 +111,7 @@ export default () => {
         tokens,
         pagination,
         getTokens,
+        updateRequestSearch,
         updateRequestOrderBy,
         updateRequestOrderDirection,
         updateRequestAmount,
