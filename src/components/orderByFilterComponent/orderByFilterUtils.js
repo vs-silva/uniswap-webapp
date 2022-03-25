@@ -1,6 +1,7 @@
 import OrderByFilterLabels from './orderByFilterLabels';
 import {Translate} from "../../langResources";
 import ErrorManager from '../../errorManager';
+import {ref} from "vue";
 
 export default (props, emit) => {
 
@@ -10,6 +11,9 @@ export default (props, emit) => {
             reporter: 'OrderBy Utils'
         });
     }
+
+    const orderByData = ref(generateOrderByData(props));
+    const selectedOption = ref('');
 
     function generateOrderByData(props) {
 
@@ -69,6 +73,8 @@ export default (props, emit) => {
     }
 
     return {
+        orderByData,
+        selectedOption,
         generateOrderByData,
         emitChange
     };
