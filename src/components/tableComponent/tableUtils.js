@@ -1,5 +1,6 @@
 import TableLabels from './tableLabels';
 import ErrorManager from '../../errorManager';
+import {ref} from "vue";
 
 export default (props) => {
 
@@ -9,6 +10,8 @@ export default (props) => {
             reporter: 'Table Utils'
         });
     }
+
+    const tableData = ref(null);
 
     function generateTableData(tokensData) {
         const result = {
@@ -27,7 +30,7 @@ export default (props) => {
     }
 
     function updateTable(props) {
-        return generateTableData(extractTokensData(props));
+        tableData.value = generateTableData(extractTokensData(props));
     }
 
     function displayTable(props) {
@@ -41,6 +44,7 @@ export default (props) => {
     }
 
     return {
+        tableData,
         generateTableData,
         updateTable,
         displayTable

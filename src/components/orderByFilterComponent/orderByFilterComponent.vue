@@ -13,7 +13,7 @@
 <script setup>
 import OrderLabels from './orderByFilterLabels';
 import OrderByFilterUtils from './orderByFilterUtils';
-import {ref, watchEffect} from 'vue';
+import {watchEffect} from 'vue';
 
 const props = defineProps({
   tokensData: {
@@ -28,19 +28,12 @@ const emit = defineEmits([
 ]);
 
 const orderByUtils = OrderByFilterUtils(props, emit);
-const orderByData = ref(orderByUtils.generateOrderByData(props));
-const selectedOption = ref('');
-const hasDataContent = ref(false);
+const orderByData = orderByUtils.orderByData;
+const selectedOption = orderByUtils.selectedOption;
 
 watchEffect(() => {
   orderByData.value = orderByUtils.generateOrderByData(props);
-  const { options } = orderByData.value;
-
-  if(!options.length) {
-    return;
-  }
-
-  hasDataContent.value = (options.length > 0);
+  selectedOption.value = orderByData.value.options?.[0]?.value || '';
 });
 
 </script>

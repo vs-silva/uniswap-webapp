@@ -21,7 +21,7 @@
 
 <script setup>
 import TableUtils from './tableUtils';
-import {onMounted, ref, watchEffect} from 'vue';
+import {onMounted, watchEffect} from 'vue';
 
 const props = defineProps({
   tokensData: {
@@ -31,15 +31,15 @@ const props = defineProps({
   }
 });
 
-const tableData = ref(null);
 const tableUtils = TableUtils(props);
+const tableData = tableUtils.tableData;
 
 onMounted(() => {
   tableData.value = tableUtils.generateTableData();
 });
 
 watchEffect(() => {
-  tableData.value = tableUtils.updateTable(props);
+  tableUtils.updateTable(props);
 });
 
 </script>

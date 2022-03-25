@@ -1,5 +1,6 @@
 import OrderFilterLabels from './orderFilterLabels';
 import ErrorManager from '../../errorManager';
+import {ref} from "vue";
 
 export default (emit) => {
 
@@ -10,19 +11,21 @@ export default (emit) => {
         });
     }
 
-    function toggleSortDirection(isInDescOrder) {
+    const isInDescOrder = ref(true);
+    const toggleLabel = ref(OrderFilterLabels.orderDescending);
 
-        const orderDesc = !isInDescOrder;
-        const direction = (orderDesc) ? 'desc': 'asc';
+    function toggleSortDirection(isDescOrder) {
+
+        isInDescOrder.value = !isDescOrder;
+        toggleLabel.value = ( isInDescOrder.value ) ? OrderFilterLabels.orderDescending : OrderFilterLabels.orderAscending;
+        const direction = (isInDescOrder.value) ? 'desc': 'asc';
         emit('update:toggle-sort-order', direction);
 
-        return {
-            isInDescOrder: orderDesc,
-            label: (orderDesc) ? OrderFilterLabels.orderDescending : OrderFilterLabels.orderAscending
-        };
     }
 
     return {
+        isInDescOrder,
+        toggleLabel,
         toggleSortDirection
     };
 };
