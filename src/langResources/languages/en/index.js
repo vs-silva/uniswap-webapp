@@ -1,4 +1,5 @@
 import HeaderLabels from './headerLabels';
+import CardLabels from './cardLabels';
 import TableLabels from './tableLabels';
 import ChartLabels from './chartLabels';
 import SearchLabels from './searchLabels';
@@ -9,6 +10,7 @@ import FilterOrderByLabels from './filterOrderByLabels';
 
 export default {
     header: HeaderLabels,
+    card: CardLabels,
     table: TableLabels,
     pagination: PaginationLabels,
     chart: ChartLabels,
