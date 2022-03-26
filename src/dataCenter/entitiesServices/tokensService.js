@@ -12,7 +12,6 @@ function convertDTOToEntity(tokenData) {
         symbol: x.symbol,
         supply: x.totalSupply,
         tvlUSD: processTVLUSDValue(x.totalValueLockedUSD)
-
     }));
 
 }

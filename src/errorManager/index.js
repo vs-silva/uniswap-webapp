@@ -1,5 +1,5 @@
 function processError({error, reporter = null}) {
-    if(error) {
+    if(!error) {
         return;
     }
 
