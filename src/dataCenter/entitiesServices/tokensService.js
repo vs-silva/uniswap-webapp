@@ -23,4 +23,4 @@ function processTVLUSDValue(value) {
 
 export default {
     convertDTOToEntity
-}
+};

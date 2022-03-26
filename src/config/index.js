@@ -21,7 +21,9 @@ export default {
             }
         },
         rest: {
-            endpoint: 'https://api.github.com/users/vs-silva'
+            endpoint: 'https://api.github.com',
+            resource: 'users',
+            param: 'vs-silva'
         }
     },
     multiLang: {

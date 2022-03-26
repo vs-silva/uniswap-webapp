@@ -5,7 +5,7 @@ export default (engine) => {
     if(!engine) {
        ErrorManager.processError({
            error: 'GraphQL engine must be provided',
-           reporter: 'Data engine service'
+           reporter: 'GraphQL service'
        });
     }
 
@@ -14,7 +14,7 @@ export default (engine) => {
         if(!requestQuery) {
             ErrorManager.processError({
                 error: 'Query must be provided',
-                reporter: 'Get function - Data client service'
+                reporter: 'Get function - GraphQL service'
             });
         }
 

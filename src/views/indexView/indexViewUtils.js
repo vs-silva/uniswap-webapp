@@ -41,7 +41,6 @@ export default () => {
                 reporter: 'Get tokens - Index View Utils'
             });
         });
-
     }
 
     function updateRequestSearch(search) {

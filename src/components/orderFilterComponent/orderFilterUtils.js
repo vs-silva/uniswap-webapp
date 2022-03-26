@@ -1,6 +1,6 @@
 import OrderFilterLabels from './orderFilterLabels';
 import ErrorManager from '../../errorManager';
-import {ref} from "vue";
+import {ref} from 'vue';
 
 export default (emit) => {
 
