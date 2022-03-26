@@ -3,9 +3,13 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 
 //Icons
 import {faSearch} from '@fortawesome/free-solid-svg-icons';
+import {faGlobe} from '@fortawesome/free-solid-svg-icons';
+import {faEnvelope} from '@fortawesome/free-solid-svg-icons';
 
 const _icons = [
-    faSearch
+    faSearch,
+    faGlobe,
+    faEnvelope
 ];
 
 _icons.forEach(icon => (library.add(icon)));
