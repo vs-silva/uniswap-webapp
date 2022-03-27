@@ -1,10 +1,17 @@
+import GraphQLServices from '../../../src/dataCenter/graphqlClient/services';
 
-describe('GraphQL Client unit tests', () => {
+describe('GraphQL client services unit tests', () => {
 
-    test('ss' ,() => {
+    test('Service throws error if graphql engine is not provided' ,() => {
 
-        expect((2+2)).toEqual(4);
+        const mocked = jest.fn(GraphQLServices);
+        const expected = Error('ERROR::: GraphQL engine must be provided :: REPORTED BY::: GraphQL service');
+        const result = mocked();
+
+        expect(mocked).toHaveBeenCalled();
+        expect(mocked).toHaveBeenCalledTimes(1);
+        expect(mocked).toHaveBeenCalledWith();
+        expect(result).toMatchObject(expected);
 
     });
-
 });

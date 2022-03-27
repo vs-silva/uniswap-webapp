@@ -3,7 +3,7 @@ function processError({error, reporter = null}) {
         return;
     }
 
-    return (!reporter) ? new Error(`ERROR::: ${error}`) : new Error(`ERROR::: ${error} :: REPORTED BY::: ${reporter}`);
+    return (!reporter) ? Error(`ERROR::: ${error}`) : Error(`ERROR::: ${error} :: REPORTED BY::: ${reporter}`);
 }
 
 export default {

@@ -6,7 +6,7 @@ import ErrorManager from '../../errorManager';
 export default (props, chartContainer) => {
 
     if(!props || !chartContainer) {
-        ErrorManager.processError({
+        return ErrorManager.processError({
             error: 'Required params must be provided',
             reporter: 'Chart Utils'
         });

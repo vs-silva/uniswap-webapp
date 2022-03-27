@@ -6,7 +6,7 @@ import TokensService from '../../entitiesServices/tokensService';
 export default (client) => {
 
     if(!client) {
-        ErrorManager.processError({
+        return ErrorManager.processError({
             error: 'GraphQL client must be provided',
             reporter: 'Tokens store service'
         });

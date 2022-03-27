@@ -5,7 +5,7 @@ import {ref} from 'vue';
 export default (emit) => {
 
     if(!emit) {
-        ErrorManager.processError({
+        return ErrorManager.processError({
             error: 'Required params must be provided',
             reporter: 'Order Filter Utils'
         });
