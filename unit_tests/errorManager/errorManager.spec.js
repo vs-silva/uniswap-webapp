@@ -18,7 +18,7 @@ describe('ErrorManager unit tests', () => {
     test('ErrorManager.processError returns new Error obj without reporter if only error param is provided', () => {
 
         const mocked = jest.fn(ErrorManager.processError);
-        const expected = new Error('ERROR::: Some error');
+        const expected = Error('ERROR::: Some error');
         const payload = {
             error: 'Some error'
         };
@@ -34,7 +34,7 @@ describe('ErrorManager unit tests', () => {
     test('ErrorManager.processError returns new Error obj with reporter if reporter param is provided', () => {
 
         const mocked = jest.fn(ErrorManager.processError);
-        const expected = new Error('ERROR::: Some error :: REPORTED BY::: Some reporter');
+        const expected = Error('ERROR::: Some error :: REPORTED BY::: Some reporter');
         const payload = {
             error: 'Some error',
             reporter: 'Some reporter'

@@ -4,7 +4,7 @@ import ChartTypes from './chartTypes';
 export default (engine) => {
 
     if(!engine) {
-        ErrorManager.processError({
+        return ErrorManager.processError({
             error: 'Chart engine must be provided',
             reporter: 'Chart service'
         });
@@ -13,7 +13,7 @@ export default (engine) => {
     function createChart(container, {type= ChartTypes.line}) {
 
         if(!container) {
-            ErrorManager.processError({
+            return ErrorManager.processError({
                 error: 'Chart container must be provided',
                 reporter: 'createChart - Chart service'
             });
@@ -61,7 +61,7 @@ export default (engine) => {
     function updateChart(chart, data) {
 
         if(!chart || !data) {
-            ErrorManager.processError({
+            return ErrorManager.processError({
                 error: 'Required params must be provided',
                 reporter: 'updateChart - Chart service'
             });

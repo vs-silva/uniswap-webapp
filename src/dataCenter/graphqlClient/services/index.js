@@ -3,7 +3,7 @@ import ErrorManager from '../../../errorManager';
 export default (engine) => {
 
     if(!engine) {
-       ErrorManager.processError({
+        return ErrorManager.processError({
            error: 'GraphQL engine must be provided',
            reporter: 'GraphQL service'
        });
@@ -12,7 +12,7 @@ export default (engine) => {
     async function get(requestQuery) {
 
         if(!requestQuery) {
-            ErrorManager.processError({
+            return ErrorManager.processError({
                 error: 'Query must be provided',
                 reporter: 'Get function - GraphQL service'
             });
@@ -23,7 +23,7 @@ export default (engine) => {
             return response?.data?.tokens;
         }
         catch (err) {
-            ErrorManager.processError({
+            return ErrorManager.processError({
                 error: err,
                 reporter: 'Get function - GraphQL service'
             });

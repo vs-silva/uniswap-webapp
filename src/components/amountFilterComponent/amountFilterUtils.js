@@ -6,7 +6,7 @@ const { minRequestAmount, maxRequestAmount } = Config.api.graphql.filters;
 export default (emit) => {
 
     if(!emit) {
-        ErrorManager.processError({
+        return ErrorManager.processError({
             error: 'Required params must be provided',
             reporter: 'Amount Filter Utils'
         });
