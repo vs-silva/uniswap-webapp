@@ -3,7 +3,7 @@ import ErrorManager from '../../errorManager';
 export default (emit) => {
 
     if(!emit) {
-        ErrorManager.processError({
+        return ErrorManager.processError({
             error: 'Required params must be provided',
             reporter: 'Search Utils'
         });

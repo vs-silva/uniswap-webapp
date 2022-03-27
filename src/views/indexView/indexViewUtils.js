@@ -36,7 +36,7 @@ export default () => {
             tokens.value = res;
             updateCurrentPage(pagination.direction);
         }).catch(err => {
-            ErrorManager.processError({
+            return ErrorManager.processError({
                 error: err,
                 reporter: 'Get tokens - Index View Utils'
             });

@@ -4,7 +4,7 @@ import {ref} from "vue";
 export default (props) => {
 
     if(!props) {
-        ErrorManager.processError({
+        return ErrorManager.processError({
             error: 'Required params must be provided',
             reporter: 'User Card Utils'
         });

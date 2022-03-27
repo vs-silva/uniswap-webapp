@@ -3,7 +3,7 @@ import ErrorManager from '../../../errorManager';
 export default (engine) => {
 
     if(!engine) {
-        ErrorManager.processError({
+        return ErrorManager.processError({
             error: 'GraphQL engine must be provided',
             reporter: 'REST service'
         });
@@ -12,7 +12,7 @@ export default (engine) => {
     async function get(requestURI) {
 
         if(!requestURI) {
-            ErrorManager.processError({
+            return ErrorManager.processError({
                 error: 'URI must be provided',
                 reporter: 'Get function - REST service'
             });
@@ -23,9 +23,9 @@ export default (engine) => {
             return response?.data;
         }
         catch (err) {
-            ErrorManager.processError({
+            return ErrorManager.processError({
                 error: err,
-                reporter: 'Get function - GraphQL service'
+                reporter: 'Get function - REST service'
             });
         }
 
