@@ -24,7 +24,7 @@ export default () => {
         }).then( res => {
             user.value = res;
         }).catch(err => {
-            ErrorManager.processError({
+            return ErrorManager.processError({
                 error: err,
                 reporter: 'Get user - About View Utils'
             });
