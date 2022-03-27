@@ -25,7 +25,7 @@ export default (engine) => {
         catch (err) {
             return ErrorManager.processError({
                 error: err,
-                reporter: 'Get function - GraphQL service'
+                reporter: 'Get function - REST service'
             });
         }
 
