@@ -10,7 +10,7 @@ export default (engine) => {
         });
     }
 
-    function createChart(container, {type= ChartTypes.line}) {
+    function createChart(container, {type= ChartTypes.line} = {}) {
 
         if(!container) {
             return ErrorManager.processError({
@@ -46,7 +46,7 @@ export default (engine) => {
     function clearChar(chart) {
 
         if(!chart) {
-            ErrorManager.processError({
+            return ErrorManager.processError({
                 error: 'Chart must be provided',
                 reporter: 'clearChar - Chart service'
             });
